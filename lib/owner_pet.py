@@ -32,6 +32,25 @@ class Owner:
         pets = self.pets()
         sorted_pets = sorted(pets, key=lambda pet: pet.name)
         return sorted_pets
+    
+try:
+    owner1 = Owner("John")
+    pet1 = Pet("Buddy", "dog")
+    pet2 = Pet("Whiskers", "cat")
+    pet3 = Pet("Charlie", "bird")
+
+    owner1.add_pet(pet1)
+    owner1.add_pet(pet2)
+    owner1.add_pet(pet3)
+
+    sorted_pets = owner1.get_sorted_pets()
+    print(f"Owner={owner1.name}'s sorted pets by name: {[pet.name for pet in sorted_pets]}")
+
+except Exception as e:
+    print(e)
+
+# Checking all pets added to Pet.all
+print(f"All pets: {[pet.name for pet in Pet.all]}")
 
         
         
